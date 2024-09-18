@@ -14,3 +14,4 @@ e_de_maior = idade > 18
 msg2 = "Pode acessar." if e_de_maior else "Não pode acessar."
 
 print(msg2)
+
