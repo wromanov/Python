@@ -1,24 +1,26 @@
+#Validador de CPF
+
+
 cpf = input('Digite o CPF: ')
 
-#removendo "." e "-"
-cpf = cpf.replace(".","").replace("-","")
+# removendo "." e "-"
+cpf = cpf.replace(".", "").replace("-", "")
 
-#convertendo o cpf em uma lista
-cpf = cpf.split("")
+#Cria uma nova lista para inserir os números do CPF
+lista_cpf = []
 
-print(len(cpf))
+# percorre a string CPF
+for digito in cpf:
+    # print(digito)
+    lista_cpf.append(int(digito))  # insere os dígitos da string cpf na lista_cpf
 
+contagem = 10
+soma_cpf = 0
 
-# lista_int = []
+for c in range(0, 9):
+    soma_cpf += lista_cpf[c] * contagem  # multiplica o digito do cpf com o contador e adiciona ao acumulador
+    contagem -= 1  # Decrementa a contagem
+    #print(soma_cpf)
 
-#cria uma nova lista com inteiros
-# for i in lista:
-#     lista_int.append(int(i))
-
-# contagem = 10
-# soma_cpf = 0
-#
-# for c in lista_int:
-#     soma_cpf += c * contagem
-#     contagem -= 1
-#     print(soma_cpf)
+calculo_cpf = 11 - (soma_cpf % 11)
+print(calculo_cpf)
